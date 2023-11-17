@@ -1,0 +1,19 @@
+body{
+    background-image: url("../fondoMickey.jpg");
+    background-size: cover;
+    overflow: auto;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+
+}
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+div{
+    text-align: center;
+}
+hr{
+    display: none;
+}

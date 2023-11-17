@@ -1,0 +1,14 @@
+body{
+background-image: url(.\\particula.jpg);
+text-align: center;
+ padding-top: 25px;
+ color: rgb(7, 17, 17);
+}
+a {
+    background-color: powderblue;
+    transition: background-color 0.5s;
+  }
+  
+  a:hover {
+    background-color: gold;
+  }
