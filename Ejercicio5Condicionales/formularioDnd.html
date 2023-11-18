@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario D&D</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <STyle>
+        body{
+            background-image: url('fondo.jpg');
+            background-size: cover;}
+    </STyle>
+</head>
+<body>
+
+<div class="container mt-5">
+    <form action="procesar_Formulario.php" method="post">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre de Personaje</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="clase" class="form-label">Clase</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Guerrero" id="clase_guerrero" name="clase[]">
+                <label class="form-check-label" for="clase_guerrero">Guerrero</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Mago" id="clase_mago" name="clase[]">
+                <label class="form-check-label" for="clase_mago">Mago</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Explorador" id="clase_explorador" name="clase[]">
+                <label class="form-check-label" for="clase_explorador">Explorador</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Druida" id="clase_druida" name="clase[]">
+                <label class="form-check-label" for="clase_druida">Druida</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Picaro" id="clase_picaro" name="clase[]">
+                <label class="form-check-label" for="clase_picaro">Picaro</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Barbaro" id="clase_barbaro" name="clase[]">
+                <label class="form-check-label" for="clase_barbaro">Barbaro</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Clerigo" id="clase_clerigo" name="clase[]">
+                <label class="form-check-label" for="clase_clerigo">Clerigo</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Hechicero" id="clase_hechicero" name="clase[]">
+                <label class="form-check-label" for="clase_hechicero">Hechicero</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Brujo" id="clase_brujo" name="clase[]">
+                <label class="form-check-label" for="clase_brujo">Brujo</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Paladin" id="clase_paladin" name="clase[]">
+                <label class="form-check-label" for="clase_paladin">Paladin</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Monje" id="clase_monje" name="clase[]">
+                <label class="form-check-label" for="clase_monje">Monje</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="Bardo" id="clase_bardo" name="clase[]">
+                <label class="form-check-label" for="clase_bardo">Bardo</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Raza</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="raza" id="raza_elfo" value="Elfo" required>
+                <label class="form-check-label" for="raza_elfo">Elfo</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="raza" id="raza_enano" value="Enano" required>
+                <label class="form-check-label" for="raza_enano">Enano</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="raza" id="raza_gnomo" value="Gnomo" required>
+                <label class="form-check-label" for="raza_gnomo">Gnomo</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="raza" id="raza_tiflin" value="tiflin" required>
+                <label class="form-check-label" for="raza_tiflin">Tiflin</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="raza" id="raza_semielfo" value="Semielfo" required>
+                <label class="form-check-label" for="raza_semielfo+">Semielfo</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="raza" id="raza_humano" value="Humano" required>
+                <label class="form-check-label" for="raza_humano">Humano</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="raza" id="raza_mediano" value="Mediano" required>
+                <label class="form-check-label" for="raza_mediano">Mediano</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="raza" id="raza_draconido" value="Draconido" required>
+                <label class="form-check-label" for="raza_draconido">Draconido</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="raza" id="raza_semiorco" value="Semiorco" required>
+                <label class="form-check-label" for="raza_semiorco">Semiorco</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="fuerza" class="form-label">Fuerza</label>
+            <input type="range" class="form-range" id="fuerza" name="fuerza" min="1" max="20" step="1" value="10">
+        </div>
+
+        <div class="mb-3">
+            <label for="destreza" class="form-label">Destreza</label>
+            <input type="range" class="form-range" id="destreza" name="destreza" min="1" max="20" step="1" value="10">
+        </div>
+        <div class="mb-3">
+            <label for="constitucion" class="form-label">Constitucion</label>
+            <input type="range" class="form-range" id="constitucion" name="constitucion" min="1" max="20" step="1" value="10">
+        </div>
+        <div class="mb-3">
+            <label for="inteligencia" class="form-label">Inteligencia</label>
+            <input type="range" class="form-range" id="inteligencia" name="inteligencia" min="1" max="20" step="1" value="10">
+        </div>
+        <div class="mb-3">
+            <label for="sabiduria" class="form-label">Sabiduria</label>
+            <input type="range" class="form-range" id="sabiduria" name="sabiduria" min="1" max="20" step="1" value="10">
+        </div>
+        <div class="mb-3">
+            <label for="carisma" class="form-label">Carisma</label>
+            <input type="range" class="form-range" id="carisma" name="carisma" min="1" max="20" step="1" value="10">
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Trasfondo</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="trasfondo" id="transfondo_acolito" value="Acolito" required>
+                <label class="form-check-label" for="transfondo_acolito">Acolito</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="trasfondo" id="transfondo_animador" value="Animador" required>
+                <label class="form-check-label" for="transfondo_animador">Animador</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="trasfondo" id="transfondo_ermitaño" value="Ermitaño" required>
+                <label class="form-check-label" for="transfondo_ermitaño">Ermitaño</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="trasfondo" id="transfondo_soldado" value="Soldado" required>
+                <label class="form-check-label" for="transfondo_soldado">Soldado</label>
+            </div>
+             <div class="form-check">
+                <input class="form-check-input" type="radio" name="trasfondo" id="transfondo_charlatan" value="Charlatan" required>
+                <label class="form-check-label" for="transfondo_charlatan">Charlatan</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="trasfondo" id="transfondo_artesano" value="Artesano" required>
+                <label class="form-check-label" for="transfondo_artesano">Artesano</label>
+            </div>
+           
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="trasfondo" id="transfondo_erudito" value="Erudito" required>
+                <label class="form-check-label" for="transfondo_erudito">Erudito</label>
+            </div>
+           <div class="form-check">
+                <input class="form-check-input" type="radio" name="trasfondo" id="transfondo_criminal" value="Criminal" required>
+                <label class="form-check-label" for="transfondo_criminal">Criminal</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="trasfondo" id="transfondo_salvaje" value="Salvaje" required>
+                <label class="form-check-label" for="transfondo_salvaje">Salvaje</label>
+            </div>
+
+            <div class="mb-3">
+                <label for="nombreJugador" class="form-label">Nombre de Jugador</label>
+                <input type="text" class="form-control" id="nombrejugador" name="nombreJugador" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Personaje</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+
+body {
+    background-image: url("fond.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+h1, h2, h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+.puntuacion {
+    font-weight: bold;
+}
+
+
+#juego-terminado {
+    text-align: center;
+    font-size: 24px;
+    color: #FF0000; 
+}
+
+
+.nombre-jugador {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.imagen-jugada {
+    width: 100px; 
+    height: auto;
+}
+
+hr {
+    display: none; 
+}
+.juego-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jugador {
+    text-align: center;
+    margin: 0 20px; 
+}
+
+
+.imagen-jugada {
+    width: 100px;
+    height: auto;
+}
+
+
+.nombre-jugador {
+    font-size: 20px;
+    font-weight: bold;
+}
