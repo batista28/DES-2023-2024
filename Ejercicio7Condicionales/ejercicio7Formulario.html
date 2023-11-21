@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form action="ejercicio7Tabla.php" method="post" 
+        <div class="nombre" style="text-align: center;">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="name" required> <br> <br>
+        </div>
+
+        <div class="sexo" style="text-align: center;">
+            <label>Sexo</label>
+            <input type="radio" name="sexo" value="HOMBRE">HOMBRE
+            <input type="radio" name="sexo" value="MUJER">MUJER <br> <br>
+        </div>
+
+        <div class="edad" style="text-align: center;">
+            <label for="edad">Edad</label>
+            <select name="edad">
+                <option value="0-25">0-25</option>
+                <option value="25-45">25-45</option>
+                <option value="45-65">45-65</option>
+                <option value="jubilado">+65</option>
+            </select>
+        </div>
+
+        <div class="sueldo" style="text-align: center;">
+            <label for="sueldo">Sueldo</label>
+            <input type="range" name="sueldo" min="0" max="120000" step="100"><br>
+        </div>
+
+        <div class="enviar" style="text-align: center;">
+            <input type="submit" value="Enviar"><br>
+        </div>
+    </form>
+</body>
+</html>

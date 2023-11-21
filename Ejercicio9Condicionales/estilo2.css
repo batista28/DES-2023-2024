@@ -1,0 +1,25 @@
+
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #e6e6e6;
+    color: #4c1111;
+    margin: 0;
+    text-align: center;
+    
+}
+
+header {
+    background-color: #614caf;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    justify-items: flex-end;
+}
