@@ -7,10 +7,10 @@
     <title>Formulario de Cumpleaños</title>
 </head>
 
-<body>
+<body>s
 
     <div class="container mt-5">
-        <form action="procesar_formulario.php" method="post">
+        <form action="ejercicio7.php" method="post">
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required>

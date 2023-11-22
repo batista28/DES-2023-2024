@@ -11,30 +11,45 @@
 <body>
 
     <?php
-    // Obtener el código del menú del formulario
     if (isset($_POST['menuCodigo'])) {
         $menuCodigo = $_POST['menuCodigo'];
-
-        // Dividir el código del menú en partes
         $menuParts = explode('-', $menuCodigo);
 
-        // Obtener información del menú
-        $orden = $menuParts[0];
-        $nombreMenu = $menuParts[1];
-        $colorLetra = $menuParts[2];
-        $urlDestino = $menuParts[3];
+        $nombreMenu = $menuParts[2];
+        $colorLetra = $menuParts[3];
+        $urlDestino = $menuParts[4];
 
-        // Imprimir menú superior
         echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">';
-        echo '<a class="navbar-brand" style="color:' . $colorLetra . ';" href="' . $urlDestino . '">' . $nombreMenu . '</a>';
+        echo '<a class="navbar-brand" style="color:' . $colorLetra . ';" href="' . $urlDestino . '">' . $nombreMenu . ' (Superior)</a>';
         echo '</nav>';
 
-        // Imprimir menú inferior
-        echo '<nav class="navbar navbar-light bg-light fixed-bottom">';
-        echo '<a class="navbar-brand" style="color:' . $colorLetra . ';" href="' . $urlDestino . '">' . $nombreMenu . '</a>';
-        echo '</nav>';
+        echo '<div class="container mt-3">';
+        echo '<h3>Tabla Generada a partir del Grid de Checkbox:</h3>';
+        echo '<table class="table table-bordered">';
+
+        // Procesar el grid de checkbox y generar la tabla
+        if (isset($_POST['checkbox'])) {
+            $checkboxArray = $_POST['checkbox'];
+            $maxHeight = count($checkboxArray);
+            $maxWidth = 0;
+
+            foreach ($checkboxArray as $row) {
+                $maxWidth = max($maxWidth, count($row));
+            }
+
+            for ($i = 0; $i < $maxHeight; $i++) {
+                echo '<tr>';
+                for ($j = 0; $j < $maxWidth; $j++) {
+                    $cellColor = isset($checkboxArray[$i][$j]) ? 'background-color: #c8e6c9;' : '';
+                    echo '<td style="' . $cellColor . '">[' . $i . ',' . $j . ']</td>';
+                }
+                echo '</tr>';
+            }
+        }
+
+        echo '</table>';
+        echo '</div>';
     } else {
-        // Mostrar mensaje de error si no se proporciona un código de menú
         echo '<div class="container mt-5">';
         echo '<div class="alert alert-danger" role="alert">¡Error! No se proporcionó un código de menú.</div>';
         echo '</div>';

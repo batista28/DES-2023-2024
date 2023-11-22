@@ -17,7 +17,24 @@
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombreCompleto = $_POST["nombre"];
-        $palabras = explode(" ", trim($nombreCompleto));
+
+        // Dividir palabras manualmente
+        $palabras = [];
+        $palabraActual = "";
+
+        for ($i = 0; $i < strlen($nombreCompleto); $i++) {
+            $caracter = $nombreCompleto[$i];
+
+            if ($caracter != ' ') {
+                $palabraActual .= $caracter;
+            } else {
+                $palabras[] = $palabraActual;
+                $palabraActual = "";
+            }
+        }
+
+        // Agregar la última palabra
+        $palabras[] = $palabraActual;
 
         foreach ($palabras as $index => $palabra) {
             $numConsonantes = contarConsonantesSinFunciones($palabra);
@@ -36,7 +53,17 @@
             $letra = $palabra[$i];
 
             if (($letra >= 'a' && $letra <= 'z') || ($letra >= 'A' && $letra <= 'Z')) {
-                if (strpos($consonantes, $letra) !== false) {
+                // Verificar si la letra es una consonante
+                $esConsonante = false;
+
+                for ($j = 0; $j < strlen($consonantes); $j++) {
+                    if ($letra == $consonantes[$j]) {
+                        $esConsonante = true;
+                        break;
+                    }
+                }
+
+                if ($esConsonante) {
                     $numConsonantes++;
                 }
             }
