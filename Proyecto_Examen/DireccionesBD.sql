@@ -1,0 +1,32 @@
+DROP DATABASE IF EXISTS DireccionesBD;
+
+CREATE DATABASE IF NOT EXISTS DireccionesBD;
+
+USE DireccionesBD;
+
+CREATE TABLE IF NOT EXISTS Pais (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    codigo VARCHAR(6),
+    descripcion VARCHAR(255),
+    num_habit INT,
+    idioma VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS Provincia (
+    codProv VARCHAR(5)  PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    descripcion VARCHAR(255),
+    comunidad VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS Direccion (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Calle VARCHAR(255),
+    Codigo_postal INT,
+    Numero INT,
+    codProv VARCHAR(5) NOT NULL,
+    idPais INT NOT NULL,
+    FOREIGN KEY (codProv) REFERENCES Provincia (codProv) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    FOREIGN KEY (idPais) REFERENCES Pais (id) ON DELETE NO ACTION ON UPDATE NO ACTION
+);
