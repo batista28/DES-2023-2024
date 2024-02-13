@@ -15,7 +15,7 @@ class Direccion
         //Hacemos un try-catch para manejar posibles fallos
         try {
             //Realizamos una quiery de todos los datos de la pais
-            $query = "SELECT * FROM Direccion";
+            $query = "SELECT Direccion.* , provincia.nombre as nombreProv, pais.nombre as nombrePais FROM Direccion inner join pais on pais.id =direccion.idPais inner join provincia ON provincia.codProv = direccion.codProv;";
 
             //Ejecutamos la query y guardamos el puntero en $resultado
             //query ejecuta antes de la variable
@@ -44,8 +44,8 @@ los datos de todas las direcciones de dicha provincia. Dentro de la clase direcc
         //Hacemos un try-catch para manejar posibles fallos
         try {
             //Realizamos una query de todos los datos de la direcciones
-            $query = "SELECT direccion.*,Provincia.nombre as NombreProv FROM direccion INNER JOIN provincia ON Provincia.codProv=direccion.codProv WHERE Provincia.codProv = :codProv";
-
+            $query = "SELECT direccion.*,pais.nombre as nombrePais,Provincia.nombre as nombreProv FROM direccion INNER JOIN provincia ON Provincia.codProv=direccion.codProv INNER JOIN pais on pais.id = direccion.idPais WHERE Provincia.codProv = :codProv";
+            print $codProv;
             //Ejecutamos la query y guardamos el puntero en $stmt
             $stmt = $conexion->prepare($query);
 
@@ -74,7 +74,7 @@ los datos de todas las direcciones de dicha provincia. Dentro de la clase direcc
         //Hacemos un try-catch para manejar posibles fallos
         try {
             //Realizamos una quiery de todos los datos de la Direcciones
-            $query = "SELECT direccion.* ,Pais.nombre as NombrePais FROM direccion INNER JOIN pais on pais.id=direccion.idPais WHERE Pais.id = :idPais";
+            $query = "SELECT direccion.* ,provincia.nombre as nombreProv ,Pais.nombre as nombrePais FROM direccion INNER JOIN pais on pais.id=direccion.idPais INNER JOIN provincia ON direccion.codProv= provincia.codProv WHERE Pais.id = :idPais";
 
 
             //Ejecutamos la query y guardamos el puntero en $stmt

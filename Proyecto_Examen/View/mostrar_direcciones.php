@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <form action="../controller/lista_direcciones.php" method="post">
+    <form action="../controller/subControllerRamon.php" method="post">
         <h5>DireccionesBD:</h5>
 
         <select name='pais'>
@@ -48,7 +48,6 @@
 
             <tbody>
                 <?php foreach ($direcciones as $direccion): ?>
-                    <?php var_dump($direccion) ?>
                     <tr>
                         <th>Calle:</th>
                         <td>
@@ -64,12 +63,12 @@
                         </td>
                         <th> Provincia:</th>
                         <td>
-                            <?php $direccion['codProv'] ?>
-                            <?php ?>,
+                            <?php echo $direccion['nombreProv']; ?>,
+
                         </td>
                         <th> País:</th>
                         <td>
-                            <?php echo $direccion['NombrePais']; ?>
+                            <?php echo $direccion['nombrePais']; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

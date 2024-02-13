@@ -21,21 +21,37 @@ $paises = ModelPais::getPaises($conexion);
 $provincias = ModelProvincia::getProvincias($conexion);
 $direcciones = [];
 
-// Verificar si se ha seleccionado un país o una provincia
 
-if (isset($_POST['pais'])) {
+//Select con dos valores seleccionados.
+
+if ($_POST["provincia"] != -1 && $_POST["pais"] != -1) {
+    include('..\view\mostrar_direcciones.php');
+    echo 'Solo selecciona 1 por favor';
+    exit(400);
+}
+
+if ($_POST["pais"] === $_POST["provincia"]){
+    $direcciones = ModelDireccion::getDirecciones($conexion);
+    include('..\view\mostrar_direcciones.php');
+    exit(200);
+}
+
+if($_POST["pais"] != -1){
     $pais = $_POST['pais'];
     // Obtener las direcciones del país seleccionado
     $direcciones = ModelDireccion::getDireccionesPais($conexion, $pais);
-} elseif (isset($_POST['provincia'])) {
+
+}else{
+
     $provincia = $_POST['provincia'];
     // Obtener las direcciones de la provincia seleccionada
     $direcciones = ModelDireccion::getDireccionesProv($conexion, $provincia);
 }
+// Verificar si se ha seleccionado un país o una provincia
 //:: es para llamar a funciones estaticas
-
-
 include('..\view\mostrar_direcciones.php');
+exit(200);
+
 
 
 
