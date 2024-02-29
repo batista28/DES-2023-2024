@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <form action="../controller/subControllerRamon.php" method="post">
+    <form action="../controller/lista.php" method="post">
         <h5>DireccionesBD:</h5>
 
         <select name='pais'>

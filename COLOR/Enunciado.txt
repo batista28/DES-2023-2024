@@ -1,0 +1,29 @@
+El objetivo es expandir una base de datos de una aplicación de gestión de torneos de ajedrez, incluyendo las entidades
+"jugador" (id_jugador, nombre, apellido, alias, email, fecha_nacimiento) y
+"torneo" (id_torneo, nombre, organizador, categoría, plataforma). Se deberán actualizar los campos "id_jugador" 
+y "id_torneo" de la tabla "participaciones" para que actúen como claves externas
+de las llaves primarias de las nuevas tablas.
+
+Se establece que un jugador puede participar en múltiples torneos y un torneo puede tener múltiples jugadores inscritos.
+La tarea consiste en crear las entidades en la base de datos con al menos 15 jugadores y 10 torneos, y generar al menos 50 participaciones asociadas.
+
+Para la capa de modelo, crear los archivos "jugador.php", "participacion.php", y "torneo.php" dentro de la carpeta "model". 
+Estos archivos contendrán las clases
+para manejar los datos de sus respectivas entidades desde la base de datos, con funciones específicas como:
+
+"getJugadores(conexion)": retorna un array con la información de todos los jugadores.
+"getParticipaciones(conexion)": retorna un array con todas las participaciones.
+"getTorneos(conexion)": retorna un array con todos los torneos.
+"getParticipacionesJugador(conexion, id_jugador)": recibe el id de un jugador y retorna los datos de todas sus participaciones.
+"getParticipacionesTorneo(conexion, id_torneo)": recibe el id de un torneo y retorna los datos de todas las participaciones en ese torneo.
+En la capa de controlador y vista, crear los archivos "lista_participaciones.php" en el controlador y "mostrar_participaciones.php" en la vista.
+
+El controlador debe cargar los datos de todos los jugadores y todos los torneos desde la base de datos al iniciarse, y luego redirigir a la vista. 
+La vista mostrará dos listas desplegables, una para todos los jugadores y otra para todos los torneos.
+
+Al seleccionar un jugador o torneo, o al pulsar un botón cercano (según preferencia), 
+se invocará de nuevo al controlador, que cargará todas las participaciones asociadas a la elección hecha y actualizará 
+la vista para mostrar un listado de estas participaciones.
+
+Además del listado, la vista seguirá mostrando los desplegables para cambiar el listado de participaciones. 
+Los datos mostrados incluirán la fecha del torneo, el nombre del jugador, el nombre del torneo y la posición o resultado obtenido por el jugador.
